@@ -13,6 +13,11 @@ config_version=3
 config/name="blabla"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=256
+window/size/height=224
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
