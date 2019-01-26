@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/pisoprueba.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 100.047, 25.1918 )
+
+[node name="pisoprueba" type="Sprite"]
+
+position = Vector2( 127.5, 194.5 )
+scale = Vector2( 1.255, 1.1 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="0"]
+
+position = Vector2( 1.5, -0.499996 )
+scale = Vector2( 3.07812, 0.734375 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="2"]
+
+position = Vector2( 0.0981941, -0.0889621 )
+scale = Vector2( 3.13437, 0.787727 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+
+

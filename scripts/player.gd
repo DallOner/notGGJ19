@@ -1,23 +1,23 @@
-extends Area2D
-export (int) var velocidad
-var movimiento = Vector2()
-var limite
+extends KinematicBody2D
 
-func _ready():
-	pass
+const up = Vector2(0,-1)
+const gravity = 20
+const jumpHeight = -500
+const speed = 5
 
-func _move(delta):
-	
-	movimiento = Vector2()
-	if Input.is_action_pressed("ui_right"):
-		movimiento.x += 1
-	if Input.is_action_pressed("ui_left"):
-		movimiento.x -= 1
-	
-	if movimiento.length() > 0:
-		movimiento = movimiento.normalized() * velocidad
-	
-	position += movimiento * delta
+var motion = Vector2()
 
 func _physics_process(delta):
-	_move(delta)
+	motion.y += gravity
+	
+	if Input.is_action_pressed("ui_right"):
+		motion.x += speed
+	if Input.is_action_pressed("ui_left"):
+		motion.x -= speed	 
+	else:
+		motion.x += 0
+	if is_on_floor():
+		if Input.is_action_pressed("ui_up"):
+			motion.y = jumpHeight
+	
+	motion = move_and_slide(motion,up)
