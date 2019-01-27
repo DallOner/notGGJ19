@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pisoprueba.png-f9139f977c234892e5f294ae41cfe5f5.stex"
+path="res://.import/3.png-13d177e8d7b442155573d900bdb8aa94.stex"
 
 [deps]
 
-source_file="res://sprites/pisoprueba.png"
-dest_files=[ "res://.import/pisoprueba.png-f9139f977c234892e5f294ae41cfe5f5.stex" ]
+source_file="res://sprites/bolaroja/3.png"
+dest_files=[ "res://.import/3.png-13d177e8d7b442155573d900bdb8aa94.stex" ]
 
 [params]
 

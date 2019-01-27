@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ladie.png-2be614ea5f1b4af5cb23cc30129bf708.stex"
+path="res://.import/8.png-569d931340a13ad941fa28945ed870a1.stex"
 
 [deps]
 
-source_file="res://sprites/ladie.png"
-dest_files=[ "res://.import/ladie.png-2be614ea5f1b4af5cb23cc30129bf708.stex" ]
+source_file="res://sprites/bolaroja/8.png"
+dest_files=[ "res://.import/8.png-569d931340a13ad941fa28945ed870a1.stex" ]
 
 [params]
 

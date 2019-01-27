@@ -5,12 +5,12 @@ var screen = OS.get_real_window_size()
 var numPlatforms
 
 func _ready():
-	
+	randomize()
 	for i in range(rand_range(4,10)):
 		var plataforma = platforms.instance()
 		var pos = Vector2()
-		pos.x = rand_range(0,screen.x)
-		pos.y = rand_range(0,screen.y)
+		pos.x = rand_range(0,screen.x+1)
+		pos.y = rand_range(0,screen.y+1)
 		plataforma.position = pos
 		$platformsContainer.add_child(plataforma)	
 	

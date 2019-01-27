@@ -5,9 +5,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 154.031, 10 )
+extents = Vector2( 154.031, 7.29807 )
 
-[node name="piso" type="StaticBody2D" index="0"]
+[node name="piso" type="StaticBody2D"]
 
 position = Vector2( 101.229, 199.377 )
 input_pickable = false

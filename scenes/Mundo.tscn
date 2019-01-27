@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Mundo.gd" type="Script" id=1]
 [ext_resource path="res://scenes/piso.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/player2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/plataforma.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/ladie.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/proyectil.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/player2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/plataforma.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/ladie.tscn" type="PackedScene" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 30.6864, 392.719 )
 
 [node name="Mundo" type="Node" index="0"]
 
@@ -21,18 +27,58 @@ position = Vector2( 355.622, 425.153 )
 
 [node name="player1" parent="." index="2" instance=ExtResource( 3 )]
 
-[node name="KinematicBody2D" parent="." index="3" instance=ExtResource( 4 )]
+proyectil = ExtResource( 4 )
+
+[node name="KinematicBody2D" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 163.918, 30.6525 )
 
-[node name="plataforma" parent="." index="4" instance=ExtResource( 5 )]
+[node name="plataforma" parent="." index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 243.016, 222.718 )
 
-[node name="princesa" parent="." index="5" instance=ExtResource( 6 )]
+[node name="princesa" parent="." index="5" instance=ExtResource( 7 )]
 
 position = Vector2( 246.025, 180.423 )
 
 [node name="platformsContainer" type="Node2D" parent="." index="6"]
+
+[node name="paredIzq" type="StaticBody2D" parent="." index="7"]
+
+position = Vector2( -30.6935, 33.149 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredIzq" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="paredDerecho" type="StaticBody2D" parent="." index="8"]
+
+position = Vector2( 537.326, 24.0607 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredDerecho" index="0"]
+
+shape = SubResource( 1 )
 
 
