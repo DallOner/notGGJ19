@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/Mundo.gd" type="Script" id=1]
 [ext_resource path="res://scenes/piso.tscn" type="PackedScene" id=2]
@@ -7,9 +7,10 @@
 [ext_resource path="res://scenes/player2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/plataforma.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/ladie.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/boss.tscn" type="PackedScene" id=8]
-[ext_resource path="res://sounds/02 - Inicio del Boss Level - Mucha Patria Intro.wav" type="AudioStream" id=9]
-[ext_resource path="res://sounds/03 - Boss Theme - Mucha Patria.wav" type="AudioStream" id=10]
+[ext_resource path="res://sounds/02 - Inicio del Boss Level - Mucha Patria Intro.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds/03 - Boss Theme - Mucha Patria.wav" type="AudioStream" id=9]
+[ext_resource path="res://scenes/boss.tscn" type="PackedScene" id=10]
+[ext_resource path="res://sprites/background.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -48,7 +49,7 @@ position = Vector2( 246.025, 180.423 )
 
 [node name="paredIzq" type="StaticBody2D" parent="." index="7"]
 
-position = Vector2( -30.6935, 33.149 )
+position = Vector2( -28.238, 35.6045 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -84,13 +85,9 @@ __meta__ = {
 
 shape = SubResource( 1 )
 
-[node name="boss" parent="." index="9" instance=ExtResource( 8 )]
+[node name="fondo1" type="AudioStreamPlayer2D" parent="." index="9"]
 
-position = Vector2( 477.52, 364.586 )
-
-[node name="fondo1" type="AudioStreamPlayer2D" parent="." index="10"]
-
-stream = ExtResource( 9 )
+stream = ExtResource( 8 )
 volume_db = 20.0
 pitch_scale = 1.0
 autoplay = false
@@ -99,9 +96,9 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="fondo2" type="AudioStreamPlayer2D" parent="." index="11"]
+[node name="fondo2" type="AudioStreamPlayer2D" parent="." index="10"]
 
-stream = ExtResource( 10 )
+stream = ExtResource( 9 )
 volume_db = 20.0
 pitch_scale = 1.0
 autoplay = true
@@ -110,12 +107,24 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="Timer" type="Timer" parent="." index="12"]
+[node name="Timer" type="Timer" parent="." index="11"]
 
 process_mode = 1
 wait_time = 6.0
 one_shot = false
 autostart = true
+
+[node name="boss" parent="." index="12" instance=ExtResource( 10 )]
+
+position = Vector2( 513.124, 629.777 )
+
+[node name="background" type="Sprite" parent="." index="13"]
+
+position = Vector2( 255.462, 193.364 )
+z_index = -4096
+z_as_relative = false
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Z Index" ]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
