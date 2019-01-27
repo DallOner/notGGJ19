@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/elmalo.png-aab6dbc6acef8d52a71e63d20312cd39.stex"
+path="res://.import/6.6.png-9c8146abbb490d81c01009383018b6eb.stex"
 
 [deps]
 
-source_file="res://sprites/elmalo.png"
-dest_files=[ "res://.import/elmalo.png-aab6dbc6acef8d52a71e63d20312cd39.stex" ]
+source_file="res://sprites/animacionp2/6.6.png"
+dest_files=[ "res://.import/6.6.png-9c8146abbb490d81c01009383018b6eb.stex" ]
 
 [params]
 

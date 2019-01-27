@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/p1.png-155f7fa68176cbe87d8e919c4170eb15.stex"
+path="res://.import/4.png-b2da1997de94ab780dd13584ed340698.stex"
 
 [deps]
 
-source_file="res://sprites/p1.png"
-dest_files=[ "res://.import/p1.png-155f7fa68176cbe87d8e919c4170eb15.stex" ]
+source_file="res://sprites/bolaroja/4.png"
+dest_files=[ "res://.import/4.png-b2da1997de94ab780dd13584ed340698.stex" ]
 
 [params]
 

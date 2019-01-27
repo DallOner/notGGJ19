@@ -1,29 +1,49 @@
 extends KinematicBody2D
 
+export (PackedScene) var proyectil
 const up = Vector2(0,-1)
 const gravity = 20
-const jumpHeight = -500
+const jumpHeight = -700
 const speed = 5
 var limite
+var motion = Vector2()
+var contProyectil = 0
 
 func _ready():
 	limite = get_viewport_rect().size
 
-var motion = Vector2()
 
 func _physics_process(delta):
 	motion.y += gravity
 	
+	
 	if Input.is_action_pressed("ui_right"):
+		$pistola.right = true
 		motion.x += speed
 	if Input.is_action_pressed("ui_left"):
+		$pistola.right = false
 		motion.x -= speed	 
+	if Input.is_key_pressed(KEY_M):
+		if contProyectil < 1:
+			$AnimatedSprite.animation = "disparo"
+			contProyectil += 1
+			var houdoken = proyectil.instance()
+			#houdoken.position = position
+			var houdokenPosition = Vector2()
+			houdokenPosition.x = position.x - 1
+			houdokenPosition.y = position.y
+			houdoken.position = houdokenPosition
+			$pistola.add_child(houdoken)
+			if($pistola.right == false):
+				houdoken.speed = houdoken.speed * -1	
 	else:
 		motion.x += 0
+		$AnimatedSprite.animation = "default"
 	if is_on_floor():
 		if Input.is_action_pressed("ui_up"):
 			motion.y = jumpHeight
+			contProyectil = 0
 	
 	motion = move_and_slide(motion,up)
-	position.x = clamp(position.x, 0, limite.x)
-	position.y = clamp(position.y, 0, limite.y)
+	#position.x = clamp(position.x, 0, limite.x)
+	#position.y = clamp(position.y, 0, limite.y)
