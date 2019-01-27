@@ -17,7 +17,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 30.6864, 392.719 )
 
-[node name="Mundo" type="Node"]
+[node name="Mundo" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -116,7 +116,9 @@ autostart = true
 
 [node name="boss" parent="." index="12" instance=ExtResource( 10 )]
 
-position = Vector2( 513.124, 629.777 )
+position = Vector2( 471.381, 385.457 )
+z_index = 4085
+_sections_unfolded = [ "Z Index" ]
 
 [node name="background" type="Sprite" parent="." index="13"]
 
