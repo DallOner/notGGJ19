@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX Ataque 3 Allup.wav-a9a70915bb6bd660d549cfa5d9c8b18d.sample"
+
+[deps]
+
+source_file="res://sounds/SFX Ataque 3 Allup.wav"
+dest_files=[ "res://.import/SFX Ataque 3 Allup.wav-a9a70915bb6bd660d549cfa5d9c8b18d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -53,6 +53,13 @@ func _physics_process(delta):
 	if Input.is_key_pressed(KEY_M):
 		if contProyectil < 1:
 			#$AnimatedSprite.animation = "disparo"
+			var ataqueNum = randi() % 3
+			if(ataqueNum == 1):
+				$houdoken.play()
+			if(ataqueNum == 2):
+				$ataque2.play()
+			if(ataqueNum == 0):
+				$ataque3.play()	 
 			contProyectil += 1
 			var houdoken = proyectil.instance()
 			#houdoken.position = position
@@ -73,6 +80,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		isJumping = false
 		if Input.is_action_pressed("ui_up"):
+			$cristofue.play()
 			isJumping = true
 			$sprites.vframes = 1
 			$sprites.hframes = 8

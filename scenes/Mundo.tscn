@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Mundo.gd" type="Script" id=1]
 [ext_resource path="res://scenes/piso.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://scenes/player2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/plataforma.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/ladie.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/boss.tscn" type="PackedScene" id=8]
+[ext_resource path="res://sounds/02 - Inicio del Boss Level - Mucha Patria Intro.wav" type="AudioStream" id=9]
+[ext_resource path="res://sounds/03 - Boss Theme - Mucha Patria.wav" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -80,5 +83,40 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredDerecho" index="0"]
 
 shape = SubResource( 1 )
+
+[node name="boss" parent="." index="9" instance=ExtResource( 8 )]
+
+position = Vector2( 477.52, 364.586 )
+
+[node name="fondo1" type="AudioStreamPlayer2D" parent="." index="10"]
+
+stream = ExtResource( 9 )
+volume_db = 20.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="fondo2" type="AudioStreamPlayer2D" parent="." index="11"]
+
+stream = ExtResource( 10 )
+volume_db = 20.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Timer" type="Timer" parent="." index="12"]
+
+process_mode = 1
+wait_time = 6.0
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

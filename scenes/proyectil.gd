@@ -1,6 +1,6 @@
-extends RigidBody2D
+extends Sprite
 
-export (int) var speed = 50
+export (int) var speed = 5
 var movement = Vector2()
 
 func _ready():
@@ -14,5 +14,12 @@ func _process(delta):
 
 
 func _on_Timer_timeout():
-	$CollisionShape2D.disabled = false
-	print($CollisionShape2D.disabled)
+	pass
+	#$CollisionShape2D.disabled = false
+	#print($CollisionShape2D.disabled)
+
+
+func _on_Area2D_body_entered(body):
+	#print("hola")
+	pass
+	

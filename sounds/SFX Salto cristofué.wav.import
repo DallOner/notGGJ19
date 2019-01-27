@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX Salto cristofué.wav-9186ace47bfdc113fc5298d11f2ac1bc.sample"
+
+[deps]
+
+source_file="res://sounds/SFX Salto cristofué.wav"
+dest_files=[ "res://.import/SFX Salto cristofué.wav-9186ace47bfdc113fc5298d11f2ac1bc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

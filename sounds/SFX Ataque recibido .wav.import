@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SFX Ataque recibido .wav-26679cb16f64eda6cf48f6f97122b7a5.sample"
+
+[deps]
+
+source_file="res://sounds/SFX Ataque recibido .wav"
+dest_files=[ "res://.import/SFX Ataque recibido .wav-26679cb16f64eda6cf48f6f97122b7a5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

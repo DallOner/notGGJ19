@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/01 Title screen - No Toy Contento.wav-cc13c6ea91bd3a4d965d7cf2026ec898.sample"
+
+[deps]
+
+source_file="res://sounds/01 Title screen - No Toy Contento.wav"
+dest_files=[ "res://.import/01 Title screen - No Toy Contento.wav-cc13c6ea91bd3a4d965d7cf2026ec898.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

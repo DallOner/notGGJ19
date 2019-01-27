@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/boss.gd" type="Script" id=1]
+[ext_resource path="res://sprites/Boss/ldle/boss-ldle-anim-1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/Boss/ldle/boss-ldle-anim-2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/Boss/ldle/boss-ldle-anim-3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/Boss/ldle/boss-ldle-anim-4.png" type="Texture" id=5]
+[ext_resource path="res://sounds/SFX Erupto el poder.wav" type="AudioStream" id=6]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 18.814, 34.8565 )
+
+[node name="boss" type="Area2D"]
+
+position = Vector2( 245.477, 184.108 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 2 )
+
+[node name="elpoder" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="timerPoder" type="Timer" parent="elpoder" index="0"]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = false
+autostart = false
+
+[connection signal="area_shape_entered" from="." to="." method="_on_boss_area_shape_entered"]
+
+[connection signal="timeout" from="elpoder/timerPoder" to="." method="_on_timerPoder_timeout"]
+
+

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/02 - Inicio del Boss Level - Mucha Patria Intro.wav-0ba34f606341836e6a6b68b7f09a7f7f.sample"
+
+[deps]
+
+source_file="res://sounds/02 - Inicio del Boss Level - Mucha Patria Intro.wav"
+dest_files=[ "res://.import/02 - Inicio del Boss Level - Mucha Patria Intro.wav-0ba34f606341836e6a6b68b7f09a7f7f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

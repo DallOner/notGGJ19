@@ -14,7 +14,6 @@ var limite
 var motion = Vector2()
 var contProyectil = 0
 var isJumping
-
 func _ready():
 	isJumping = false
 	limite = get_viewport_rect().size
@@ -52,7 +51,17 @@ func _physics_process(delta):
 		motion.x -= speed	 
 	if Input.is_key_pressed(KEY_C):
 		if contProyectil < 1:
+			randomize()
+			
 			#$AnimatedSprite.animation = "disparo"
+			var ataqueNum = randi() % 3
+			print(ataqueNum)
+			if(ataqueNum == 1):
+				$houdoken.play()
+			if(ataqueNum == 2):
+				$ataque2.play()
+			if(ataqueNum == 0):
+				$ataque3.play()
 			contProyectil += 1
 			var houdoken = proyectil.instance()
 			#houdoken.position = position
@@ -73,6 +82,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		isJumping = false
 		if Input.is_key_pressed(KEY_W):
+			$cristofue.play()
 			isJumping = true
 			$sprites.vframes = 1
 			$sprites.hframes = 8

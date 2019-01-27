@@ -5,6 +5,7 @@ var screen = OS.get_real_window_size()
 var numPlatforms
 
 func _ready():
+	$fondo1.play()
 	randomize()
 	for i in range(rand_range(4,10)):
 		var plataforma = platforms.instance()
@@ -19,3 +20,7 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+
+
+func _on_Timer_timeout():
+	$fondo2.play()
