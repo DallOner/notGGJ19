@@ -10,7 +10,7 @@ func _ready():
 		var plataforma = platforms.instance()
 		var pos = Vector2()
 		pos.x = rand_range(0,screen.x+1)
-		pos.y = rand_range(0,screen.y+1)
+		pos.y = rand_range(0,screen.y-10)
 		plataforma.position = pos
 		$platformsContainer.add_child(plataforma)	
 	

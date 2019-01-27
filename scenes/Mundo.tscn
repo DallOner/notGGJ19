@@ -29,7 +29,7 @@ position = Vector2( 355.622, 425.153 )
 
 proyectil = ExtResource( 4 )
 
-[node name="KinematicBody2D" parent="." index="3" instance=ExtResource( 5 )]
+[node name="player2" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 163.918, 30.6525 )
 
